@@ -1,0 +1,304 @@
+﻿Day 5 Assignment                             
+by
+ Arun Balaji M
+
+
+1. Do the below programs in anonymous function & IIFE
+   1. Print odd numbers in an array
+
+
+Code - 
+
+(odd = function () {
+        let n=userInput[0].split(" ");
+        let ans="";
+        for(let i=0;i<n.length;i++){
+            if(n[i]%2!==0){
+                ans+=n[i]+" ";
+            }
+        }
+        console.log(ans);
+    });
+    odd();
+
+    Input -
+              2 3 4 5 6 7
+
+   Output -
+               3 5 7
+
+
+   2. Convert all the strings to title caps in a string array
+
+
+Code - 
+
+(a=function(txt){
+      txt=txt.toLowerCase().split(" ");
+      for(let i=0;i<txt.length;i++){
+        txt[i]=txt[i].charAt(0).toUpperCase() + txt[i].slice(1);
+      }
+      return txt.join(" ");
+  });
+  console.log(a(userInput[0]));
+
+Input -
+              arun bALAji
+Output -
+              Arun Balaji
+
+
+
+
+
+
+   3. Sum of all numbers in an array
+
+
+ Code - 
+       (sum = function () {
+       let n=userInput[0].split(" ");
+       let ans=0;;
+       for(let i=0;i<n.length;i++){
+                 ans+=n[i];
+                }
+         }
+         console.log(ans);
+          });
+         sum();
+
+Input -
+           2 3 4 5 
+
+Output -
+             14
+
+
+
+
+   4. Return all the prime numbers in an array
+
+
+Code - 
+
+
+var prime = function (number) {
+       if (number <= 1) {
+           return false;
+        }else {
+            for (let i = 2; i < number; i++) {
+                if (number % i === 0) {
+                    return false;
+                }
+
+            }
+    return number;
+       }
+   };
+
+   var n=userInput[0].split(" ");
+   var isprime, s="";
+   for(let i=0;i<n.length;i++){
+       isprime=prime(n[i]);
+       if(isprime){
+           s+=isprime+" ";
+       }
+   }
+   console.log(s);
+
+Input -
+             2 3 4 5 
+
+Output -
+             2 3 5
+
+
+   5. Return all the palindromes in an array
+
+
+
+
+Code - 
+
+
+checkPalindrome= function(str) {
+      const len = string.length;
+      for (let i = 0; i < len / 2; i++) {
+          if (string[i] !== string[len - 1 - i]) {
+              return 'It is not a palindrome';
+            }
+        }
+          return 'It is a palindrome';
+    };
+
+   let string = userInput[0];
+   let value = checkPalindrome(string);
+   console.log(value);
+
+
+Input -
+             madam
+
+Output -
+             It is a palindrome
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   6. Return median of two sorted arrays of same size
+
+
+Code - 
+
+
+let median,x;
+
+
+let merge = function(a){
+    x=Math.round(a.length/2);
+        if(a.length%2!==0)
+        {
+           median=a[x-1];
+           return median;
+         }
+        else
+        {
+            median=a[x-1]+" and "+a[x];
+            return median;
+        }
+
+} 
+
+
+let arr1= userInput[0].split(" ");
+let arr2= userInput[1].split(" ");
+console.log("The Median of Array 1 : "+ merge(arr1));
+console.log("The Median of Array 2 : "+ merge(arr2));
+
+
+Input -
+         1 2 3 4 5 6
+         4 5 6 7 8
+
+
+Output -
+         The Median of Array 1 : 3 and 4
+     The Median of Array 2 : 6
+
+
+
+   7. Remove duplicates from an array
+
+
+Code - 
+
+
+check= function(str) {
+      let unique = [...new Set(str)];
+      return unique;
+    };
+
+   let string = userInput[0];
+   let value = check(string);
+   console.log(value);
+
+
+
+Input -
+  m a d a e
+
+Output -
+  m a d e
+
+   8. Rotate an array by k times
+
+
+Code - 
+let rotate = function(arr,n,r)
+{
+    let i, j, first;
+    for(i = 0; i < r; i++){  
+
+         first = arr[0];  
+         for(j = 0; j<n-1; j++){  
+             arr[j] = arr[j+1];  
+         }  
+        arr[j] = first;  
+    }  
+    return arr;
+}
+
+
+
+let a = userInput[0].split(" ")
+let N = a.length;
+let R= userInput[1];
+console.log(rotate(a,N,R));
+
+
+
+
+Input - 
+  1 2 3 4 5
+  2
+
+
+
+Output -
+    [ '3', '4', '5', '1', '2' ]
+
+
+
+
+
+2. Do the below programs in arrow functions
+   1. Print odd numbers in an array
+
+
+Code - 
+
+odd = () => {
+        let n=userInput[0].split(" ");
+        let ans="";
+        for(let i=0;i<n.length;i++){
+            if(n[i]%2!==0){
+                ans+=n[i]+" ";
+            }
+        }
+        console.log(ans);
+    };
+    odd();
+
+    Input -
+              2 3 4 5 6 7
+
+   Output -
+               3 5 7
+
+
+   2. Convert all the strings to title caps in a string array
+Code - 
+
+a=(txt) => {
+      txt=txt.toLowerCase().split(" ");
+      for(let i=0;i<txt.length;i++){
+        txt[i]=txt[i].charAt(0).toUpperCase() + txt[i].slice(1);
+      }
+      return txt.join(" ");
+  };
+  console.log(a(userInput[0]));
+
+Input -
+              arun bALAji
+Output -
+              Arun Balaji
